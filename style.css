@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed&family=Fugaz+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* FONTS */
+    --ff-title: 'Fugaz One', cursive;
+    --ff-text: 'Cabin Condensed', sans-serif;
+
+    /* COLORS */
+    --clr-light: #e6f5ec;
+    --clr-dark: #522B29;
+    --clr-primary: #37FF8B;
+    --clr-secondary: #51D6FF;
+    --clr-accent: #A06B9A;
+    --clr-accent2: #8D9EC6;
+
+    --foreground: var(--clr-dark);
+    --background: linear-gradient(to left top, #37ff8b, #74fea7, #9efcc1, #c3f9d8, #e6f5ec);;
+}
+
+/* Darkmode attr */
+
+.darkmode{
+    /* COLORS */
+    --clr-light: #e6f5ec;
+    --clr-dark: #522B29;
+    --clr-primary: #37FF8B;
+    --clr-secondary: #51D6FF;
+    --clr-accent: #A06B9A;
+    --clr-accent2: #8D9EC6;
+
+
+    --foreground: var(--clr-primary);
+    --background: linear-gradient(329deg, rgba(160,107,154,1) 0%, rgba(82,43,41,1) 100%); 
+}
+
+.darkmode-hl{
+    text-shadow: 0 0 20px #84ffb7;
+    position: relative;
+}
+
+.darkmode-hl::after{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: -1;
+    color: #62f59f;
+    filter: blur(15px);
+}
+
+.darkmode-hl::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #37ff8b;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(40px);
+}
+
+/* Ground CSS */
+
+body{
+    background-image: var(--background);
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.container{
+    border: 1px solid red;
+    width: auto;
+    /* max-width: 60%; */
+    /* padding: 0 0 0 100px; */
+}
+
+.headline{
+    position: relative;
+    display: inline-block;
+    color: var(--foreground);
+    padding: 0 20px;
+    font-family: var(--ff-title);
+    text-transform: capitalize;
+    font-size: calc(3rem + 7vw);
+    /* font-size: 20px; */
+}
+
+.text{
+    margin-top: 30px;
+    font-family: var(--ff-text);
+    font-size: 1.3em;
+    max-width: 79%;
+}
+
+.btn-pair{
+    margin-top: 90px;
+    font-family: var(--ff-text);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 12px 20px;
+    /* background-color: pink; */
+    text-decoration: none;
+    font-weight: lighter;
+    border-radius: 9px;
+    color: var(--clr-light);
+}
+
+.btn-accent{
+    background-color: var(--clr-accent);
+}
+
+.btn-dark{
+    background-color: var(--clr-dark);
+    margin-left: 20px;
+}
